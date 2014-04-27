@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<title>Lightbox Demo</title>
+	<link type="text/css" rel="stylesheet" href="application.css">
+</head>
+<body>
+	<nav>
+		<a href="#static" class="lightbox-trigger" data-lightbox-key="static-demo">Static demo without callbacks</a>
+		<br>
+		<!-- Specify your data in a JSON format, like this -->
+		<a href="#dynamic" class="lightbox-trigger" data-lightbox-key="variable-demo" data-lightbox-data='{"user_id": 1}'>Variable demo with callbacks</a>
+	</nav>
+
+
+	<!-- This is a wrapper layout for all lightboxes -->
+	<script type="text/html-template" id="lightbox-tmpl">
+		<header id="lightbox-header">
+			<h1>Lightbox demo</h1>
+			<a href="#close" class="lightbox-close">X</a>
+		</header>
+		<div id="lightbox-body">
+			{{tmpl(data) template}}
+		</div>
+	</script>
+
+	<!-- These are individual lightbox views -->
+	<script type="text/html-template" id="static-demo-lightbox-tmpl">
+		<h1>Hello guest!</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+		</p>
+		<p>
+			Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+		</p>
+		<p>
+			Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.
+		</p>
+	</script>
+
+	<script type="text/html-template" id="variable-demo-lightbox-tmpl">
+		<h1>Hello ${name}!</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+		</p>
+		<p>
+			Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+		</p>
+		<p>
+			Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.
+		</p>
+	</script>
+
+	<!-- Requires jQuery and jQuery.tmpl -->
+	<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="jquery.lightbox.js"></script>
+	<script type="text/javascript" src="application.js"></script>
+</body>
+</html>

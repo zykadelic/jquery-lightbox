@@ -1,0 +1,74 @@
+/* Implementation example */
+
+html, body {
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	font: 600 16px Arial;
+}
+h1 { margin: 0; }
+nav { padding: 15px; }
+
+#lightbox-mask {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0, 0);
+	overflow: scroll;
+	-webkit-transition: background .5s;
+	-moz-transition: background .5s;
+	-o-transition: background .5s;
+	transition: background .5s;
+}
+#lightbox-mask.active { background: rgba(0,0,0, .6); }
+
+#lightbox {
+	display: none;
+	opacity: 0;
+	width: 640px;
+	margin: 80px auto 40px;
+	border-radius: 6px;
+	background: #fff;
+	-webkit-box-shadow: 0 10px 22px rgba(0,0,0, .35);
+	-moz-box-shadow: 0 10px 22px rgba(0,0,0, .35);
+	box-shadow: 0 10px 22px rgba(0,0,0, .35);
+	color: #000;
+	font-size: 14px;
+	/* Animate fading in from above */
+	-webkit-transition: opacity .5s, margin-top .5s;
+	-moz-transition: opacity .5s, margin-top .5s;
+	transition: opacity .5s, margin-top .5s;
+}
+#lightbox.active {
+	margin-top: 100px;
+	opacity: 1;
+}
+
+#lightbox #lightbox-header {
+	position: relative;
+	display: block;
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	border-radius: 6px 6px 0 0;
+}
+#lightbox #lightbox-header h1 { font-size: 16px; }
+#lightbox #lightbox-header .lightbox-close {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #ddd;
+	border-radius: 100%;
+	background: #fff;
+	color: #666;
+	line-height: 24px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#lightbox-body { padding: 25px; }
